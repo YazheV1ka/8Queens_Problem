@@ -1,0 +1,11 @@
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\bin\Debug\EightQueens_term_proj.exe.config
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\bin\Debug\EightQueens_term_proj.exe
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\bin\Debug\EightQueens_term_proj.pdb
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.csproj.AssemblyReference.cache
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.csproj.SuggestedBindingRedirects.cache
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.Properties.Resources.resources
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.csproj.GenerateResource.cache
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.csproj.CoreCompileInputs.cache
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.exe
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.pdb
+D:\code\term_proj\8Queens_term_proj\EightQueens_term_proj\EightQueens_term_proj\obj\Debug\EightQueens_term_proj.Form1.resources
