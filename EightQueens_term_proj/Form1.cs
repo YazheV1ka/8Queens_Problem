@@ -55,7 +55,7 @@ namespace EightQueens_term_proj
         private void Checkbtn_Click(object sender, EventArgs e)
         {
             var count = 0;
-            Board _board = new Board(field.Cells);
+            var _board = new Board(field.Cells);
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N; j++)
@@ -73,7 +73,6 @@ namespace EightQueens_term_proj
         /*[Solution Methods]*/
 
         // LDFS
-        //!!!!!!!!!!!!
         public void DFSbtn_Click(object sender, EventArgs e)
         {
             foreach (var cell in field.Cells)
@@ -107,13 +106,12 @@ namespace EightQueens_term_proj
                 cell.IsLocked = false;
             }
             var boardBFS = new Board(field.Cells);
-            var res = algBFS.BFS(boardBFS);
             placementFile.UserInput("userInput.txt",boardBFS);
-
+            var res = algBFS.BFS(boardBFS);
             if (res != null)
             {
                 algBFS.ShowBoardBFS(field.Cells);
-                //placementFile.AlgOutput("algOutput.txt",res);
+                placementFile.AlgOutput("algOutput.txt",res);
                 foreach (var cell in field.Cells)
                 {
                     cell.IsLocked = true;

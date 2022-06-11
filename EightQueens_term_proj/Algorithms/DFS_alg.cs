@@ -5,7 +5,6 @@ namespace EightQueens_term_proj.Algorithms
     public class DFS_alg
     {
         static Bitmap qPic = new Bitmap(Image.FromFile("queen.png"), 65, 65);
-
         private int N = 8;
 
         //DFS recursion till solution is found

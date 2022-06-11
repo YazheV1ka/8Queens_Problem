@@ -40,6 +40,7 @@ namespace EightQueens_term_proj
                     }
                 }
 
+                j++;
             }
 
             i = row;
@@ -56,6 +57,8 @@ namespace EightQueens_term_proj
                         }
                     }
                 }
+
+                j--;
             }
 
             i = row;
@@ -72,6 +75,8 @@ namespace EightQueens_term_proj
                         }
                     }
                 }
+
+                i++;
             }
 
             i = row;
@@ -88,11 +93,13 @@ namespace EightQueens_term_proj
                         }
                     }
                 }
+
+                i--;
             }
 
             i = row;
             j = col;
-            while (i >= 0 && --j >= 0)
+            while (i >= 0 && j >= 0)
             {
                 if (board.board[i, j] == 1)
                 {
@@ -104,11 +111,14 @@ namespace EightQueens_term_proj
                         }
                     }
                 }
+
+                i--;
+                j--;
             }
 
             i = row;
             j = col;
-            while (i < l && ++j < l)
+            while (i < l && j < l)
             {
                 if (board.board[i, j] == 1)
                 {
@@ -120,6 +130,9 @@ namespace EightQueens_term_proj
                         }
                     }
                 }
+
+                i++;
+                j++;
             }
 
             i = row;
@@ -136,6 +149,9 @@ namespace EightQueens_term_proj
                         }
                     }
                 }
+
+                i++;
+                j--;
             }
 
             i = row;
@@ -152,6 +168,9 @@ namespace EightQueens_term_proj
                         }
                     }
                 }
+
+                i--;
+                j++;
             }
 
             if (conflicts > 0)

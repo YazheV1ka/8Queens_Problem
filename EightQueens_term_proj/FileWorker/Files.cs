@@ -19,7 +19,7 @@ namespace EightQueens_term_proj.FileWorker
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (board.board[i,j] == 1)
+                    if (board.board[j,i] == 1)
                     {
                         
                         res[i] += "♕ ";
@@ -50,7 +50,7 @@ namespace EightQueens_term_proj.FileWorker
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (board.board[i, j] == 1)
+                    if (board.board[j, i] == 1)
                     {
                         
                         res[i] += "♕ ";
@@ -81,7 +81,7 @@ namespace EightQueens_term_proj.FileWorker
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (board[i, j] == 1)
+                    if (board[j, i] == 1)
                     {
                         
                         res[i] += "♕ ";
