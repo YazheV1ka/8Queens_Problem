@@ -1,12 +1,9 @@
-﻿using System.Drawing;
-
-namespace EightQueens_term_proj
+﻿namespace EightQueens_term_proj
 {
     public class Board
     {
         public int N = 8;
         public int[,] board;
-        /*public int[] board;*/
         private Field _field = new Field();
         
         //Board with user placement
@@ -20,7 +17,7 @@ namespace EightQueens_term_proj
                 board[i, cell.Y] = 1;
             }
         }
-
+        
         public bool boardCheck(Board board, int row, int col)
         {
             int i = 0, j = 0, l = N;

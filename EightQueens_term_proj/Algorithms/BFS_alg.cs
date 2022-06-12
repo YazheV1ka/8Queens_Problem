@@ -7,7 +7,6 @@ namespace EightQueens_term_proj.Algorithms
     public class BFS_alg
     {
         static int N = 8;
-
         static LinkedList<int[,]> boards = new LinkedList<int[,]>();
         static int[,] solution = null;
         static Bitmap qPic = new Bitmap(Image.FromFile("queen.png"), 65, 65);
@@ -121,10 +120,10 @@ namespace EightQueens_term_proj.Algorithms
             {
                 for (int j = 0; j < N; j++)
                 {
-                    //Check if state valid
+                    //Check if board safe
                     if (isSafeBFS(board, i, j))
                     {
-                        //Check if the current state has the correct queens for this step
+                        //Check if the current board has the correct queens for this step
                         if (checkSolution(board) == i)
                         {
                             int[,] temp = new int[8, 8];
@@ -137,7 +136,7 @@ namespace EightQueens_term_proj.Algorithms
                             }
 
                             temp[i, j] = 1;
-                            //Add new child state to queue
+                            //Add new child
                             boards.AddLast(temp);
                         }
                     }
@@ -145,12 +144,11 @@ namespace EightQueens_term_proj.Algorithms
             }
         }
 
-        static void placeInitialQueens(int[,] board)
+        static void placeQueens(int[,] board)
         {
             for (int i = 0; i < N; i++)
             {
-                board[0, i] = 1;
-                //Create initial states
+                //Create initial board
                 boards.AddLast(board);
                 board = new int[N, N];
             }
@@ -180,14 +178,13 @@ namespace EightQueens_term_proj.Algorithms
             int count;
             do
             {
-                placeInitialQueens(board.board);
+                placeQueens(board.board);
                 do
                 {
                     checkSolution(boards.First.Value);
                     if (checkSolution(boards.First.Value) == N)
                     {
-                        //Get random solution
-                        //return rand(one return) and break;
+                        //Get random board
                         count = rand.Next(0, 10);
                         if (count == 6)
                         {
@@ -209,199 +206,3 @@ namespace EightQueens_term_proj.Algorithms
         }
     }
 }
-
-/*public int N = 8;
-Bitmap qPic = new Bitmap(Image.FromFile("queen.png"), 65, 65);
-
-public void ShowBoardBFS(Board board, Cell[,] cells)
-{
-    var resArr = new ProblemCalculator(N).BFS();
-    
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < N; j++)
-        {
-            board.board[i, j] = 0;
-        }
-    }
-    
-    for (int i = 0; i < N; i++)
-    {
-        board.board[i, resArr[i]] = 1;
-    }
-
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < N; j++)
-        {
-            if (board.board[i, j] == 1)
-            {
-                cells[i, j].Image = qPic;
-            }
-            else
-            {
-                cells[i, j].Image = null;
-            }
-        }
-    }
-}
-
-public class ProblemCalculator
-{
-
-    private int amount;
-
-
-    private Queue<State> queue;
-
-
-    public ProblemCalculator(int amount)
-    {
-        this.amount = amount;
-
-        queue = new Queue<State>();
-    }
-
-
-    public int[] BFS()
-    {
-        State rootNode = new State(amount);
-
-        State state = bfs(rootNode);
-
-        var res = state.getPositions();
-        
-        return res;
-    }
-
-    public State bfs(State rootNode)
-    {
-        Queue<State> queue = new Queue<State>();
-        
-        queue.Enqueue(rootNode);
-        
-        while (queue.Count != 0)
-        {
-
-            State state = queue.Dequeue();
-
-            foreach (State child in state.getChildSolutions())
-            {
-                if (child.isGoal())
-                {
-                    return child;
-                }
-
-                if (child.isAcceptable())
-                {
-                    queue.Enqueue(child);
-
-                }
-            }
-        }
-        return null;
-    }
-}
-
-public class State
-{
-    private int[] positions;
-    private int n = 8;
-
-    public State(int n)
-    {
-        this.n = n;
-        positions = new int[n];
-        for (int i = 0; i < positions.Length; i++) positions[i] = -1;
-    }
-
-
-    private State(int n, int[] positions)
-    {
-
-        this.n = n;
-        this.positions = positions;
-    }
-
-
-    public int[] getPositions()
-    {
-        return positions;
-    }
-
-    public bool isAcceptable()
-    {
-
-        int current = 0;
-
-        while (current < n && positions[current] != -1)
-        {
-
-            ++current;
-        }
-
-        --current;
-
-        for (int i = 0; i < n; ++i)
-        {
-            if (i != current && positions[i] != -1)
-            {
-
-                if (positions[i] == positions[current])
-                {
-                    return false;
-                }
-                if (Math.Abs((current) - i) == Math.Abs(positions[current] - positions[i]))
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-
-    public bool isGoal()
-    {
-        if (positions[n - 1] != -1 && isAcceptable())
-        {
-            return true;
-        }
-
-        return false;
-    }
-
- 
-
-    public ISet<State> getChildSolutions()
-    {
-        ISet<State> children = new HashSet<State>();
-
-        int row = 0;
-
-        while (row < n && positions[row] != -1)
-        {
-            ++row;
-        }
-
-        if (row - 1 == n && positions[row] != -1)
-        {
-            return null;
-        }
-
-        for (int i = 0; i < n; ++i)
-        {
-
-            int[] childPositions = (int[]) positions.Clone();
-            
-            childPositions[row] = i;
-
-            children.Add(new State(n, childPositions));
-        }
-
-        return children;
-    }
-}
-}*/
-
-

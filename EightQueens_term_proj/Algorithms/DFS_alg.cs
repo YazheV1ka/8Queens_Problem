@@ -36,8 +36,7 @@ namespace EightQueens_term_proj.Algorithms
             }
         }
         
-        //Check 
-        bool isSafe(int [,]board, int row, int col)
+        public bool isSafeDFS(int[,] board, int row, int col)
         {
             int i = row, j = col, l = N;
             
@@ -121,6 +120,7 @@ namespace EightQueens_term_proj.Algorithms
             
             return true;
         }
+        
         public void UnPlaceIncorrect(int[,] board, int row, int col)
         {
             int i = row, j = col, l = N;
@@ -241,6 +241,7 @@ namespace EightQueens_term_proj.Algorithms
             }
         }
 
+        //DFS method
         public bool OneDFS(int col, Board board)
         {
             if (col >= N) 
@@ -259,7 +260,7 @@ namespace EightQueens_term_proj.Algorithms
             for (int r = 0; r < N; r++) 
             {
                 
-                if (isSafe(board.board, r, col)) 
+                if (isSafeDFS(board.board, r, col)) 
                 {
                     board.board[r, col] = 1;
                     if (OneDFS(col + 1, board))
@@ -277,5 +278,47 @@ namespace EightQueens_term_proj.Algorithms
             }
             return false;
         }
+        
+        //DFS with depth for IDS
+        public bool OneDFS(int col, int depth, Board board)
+        {
+            if (col >= N) 
+            {
+                return true;
+            }
+
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    UnPlaceIncorrect(board.board, i, j);
+                }
+            }
+
+            for (int row = 0; row < depth; row++) 
+            {
+                if (isSafeDFS(board.board, row, col)) 
+                {
+                    board.board[row, col] = 1;
+                    if (OneDFS(col + 1,depth, board))
+                    {
+                        return true;
+                    }
+                    board.board[row, col] = 0;
+                }
+                else
+                {
+                    board.board[row, col] = 0;
+                    if (depth < N)
+                    {
+                        depth += 1;
+                    }
+                }
+                
+                
+            }
+            return false;
+        }
+
     }
 }

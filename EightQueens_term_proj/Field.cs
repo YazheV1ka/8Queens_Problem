@@ -90,8 +90,6 @@ namespace EightQueens_term_proj
             foreach (var cell in Cells)
             {
                 cell.ClearCell();
-                cell.Value = 0;
-                cell.IsLocked = false;
             }
         }
     }

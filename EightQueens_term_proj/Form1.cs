@@ -98,7 +98,6 @@ namespace EightQueens_term_proj
         }
         
         // BFS
-        //Ban next solution by timer and clear
         public void BFSbtn_Click(object sender, EventArgs e)
         {
             foreach (var cell in field.Cells)
